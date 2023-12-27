@@ -37,7 +37,7 @@ h2 {
 
 table {
   margin-left: 30px;
-  border-collapse: separate
+  border-collapse: separate;
 }
 
 tr {
@@ -54,12 +54,18 @@ td {
   font-size: 12px;
 }
 
-.form {
+.form-box {
+  display: flex;
   margin-left: 30px;
 }
 
-.form-title,.edit-title {
+.form {
+  margin-left: 30px;
   margin-top: 10px;
+}
+
+.form-title,.edit-title {
+  display: inline-block;
   margin-left: 30px;
   font-size: 12px;
 }
@@ -82,10 +88,60 @@ td {
 .link-box {
   display: flex;
   margin-left: 30px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .link-item {
   margin: 2px;
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.flash {
+  margin: 20px 60px;
+  color: #008000;
+  font-size: 12px;
+}
+
+.notice {
+  margin: 20px 60px;
+  color: #008000;
+  font-size: 12px;
+}
+
+.errors-box {
+  width: 500px;
+  height: 120px;
+  margin-left: 30px;
+  border: 2px solid #ff0000;
+  background-color: #f5f5f5;
+}
+
+.errors-index {
+  color: #ffffff;
+  background-color: #b22222;
+  padding-left: 10px;
+}
+
+ul {
+  margin: 30px 80px;
+  background-color: #f5f5f5;
+}
+
+li {
+  font-size: 12px;
+}
+
+.has-error .form-title {
+  background-color: #ff0000;
+}
+
+.has-error .edit-title {
+  background-color: #ff0000;
+}
+
+.has-error .form-box {
+  display: table;  
+  margin-left: 30px;
+  padding: 2px;
+  background-color: #ff0000;
 }

@@ -1,26 +1,39 @@
 <h1>Editing Book</h1>
 
+<%= form_with model: @book, class: (@book.errors.any? ? 'has-error' : '') do |f| %>
+<% if @book.errors.any? %>
+  <div class="errors-box">
+  <div class="errors-index">
+    <%= @book.errors.count %> errors prohibited this book from being saved:
+  </div>
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
 
-<%= form_with model: @book do |f| %>
-  <p class="edit-title">
+  <div class="edit-title">
     Title
-  </p>
-  <p class="form">
-    <%= f.text_field :title %>
-  </p>
-  <p class="edit-title">
+  </div>
+  <div class="form-box">
+    <%= f.text_field :title, class:"form-input" %>
+  </div>
+
+  <div class="edit-title">
     Body
-  </p>
-  <p class="form">
-  <%= f.text_area :body %>
-  </p>
-  <p class="form">
-  <%= f.submit 'Update Book' %>
-  </p>
+  </div>
+  <div class="form-box">
+    <%= f.text_area :body, class:"form-input" %>
+  </div>
+  <div class="form">
+    <%= f.submit 'Update Book' %>
+  </div>
 
 <div class=link-box>
   <div class="link-item">
-    <%= link_to 'Show', book_path(@book.id) %>
+    <%= link_to 'Show', @book %>
   </div>
   <div class="link-item">
       |
